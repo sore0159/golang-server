@@ -2,16 +2,20 @@
 {{ define "css"}}main{{end}}
 {{define "body"}}
 Hello {{.Name}}<br>
-<br>Apps Available to you:<br>
+<br>Projects available:<br>
 &nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;<a href="{{.HomeURL}}/roomgame">Room Game Go!</a><br>
+An exploration game with random map and name generation.<br><br>
 {{ if eq .Level "guest" }}
 &nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;<a href="{{.HomeURL}}/menagerie">Menagerie</a><br>
+Just two placeholder pages and a World of Warcraft joke: built as a test of some server features.
+<br>
+{{ end }}
+<br>Account:
+{{ if eq .Level "guest" }}
+<br>&#8226; <a href="/login">Login</a>
+<br>&#8226; <a href="/register">Create</a>
+{{else}}
+<br>&#8226; <a href="/logout">Logout</a>
 {{ end }}
 <br><br><a href="/">Main Page</a>
-{{ if eq .Level "guest" }}
-<br><a href="/register">Create an Account</a>
-<br><a href="/login">Login To Existing Account</a>
-{{else}}
-<br><a href="/logout">Logout</a>
-{{ end }}
 {{ end}}

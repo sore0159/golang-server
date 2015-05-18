@@ -2,14 +2,17 @@
 {{ define "css"}}main{{end}}
 {{define "body"}}
 Welcome to the Mule's project testing grounds!<br>
-Last Updated: 2015/05/17<br>
+Last Updated: 2015/05/18<br>
+<br>You can see what I've been working on:
+<br>&#8226; <a href="{{.HomeURL}}">Projects</a>
+<br>
 {{ if eq .Level "guest" }}
-<br><a href="{{.HomeURL}}">Try out Apps As a Guest</a>
-<br><a href="/register">Create an Account</a>
-<br><a href="/login">Login To Existing Account</a>
+<br>With an account, any games you play or data you make will be saved.
+<br>Account:
+<br>&#8226; <a href="/login">Login</a>
+<br>&#8226; <a href="/register">Create</a>
 {{else}}<br>You are logged in as: {{.Name}}
-<br><a href="{{.HomeURL}}">Go to Your Control Center</a>
-<br><a href="/logout">Logout</a>
+<br>&#8226; <a href="/logout">Logout</a>
 {{end}}
 
 {{ end}}
