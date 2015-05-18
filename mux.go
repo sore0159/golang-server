@@ -31,6 +31,6 @@ func SetupMux() *mux.Router {
 	s2 := r.PathPrefix("/{user}/" + roomgame.APPNAME).Subrouter()
 	roomgame.SetupMux(s2)
 	// //
-	r.HandleFunc("/{user}/{non-app:.*}", auth.DataWrap(auth.RedirHome))
+	r.HandleFunc("/{user}/{non-app:.*}", auth.RedirHome)
 	return r
 }
