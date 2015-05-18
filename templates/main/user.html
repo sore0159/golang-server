@@ -1,0 +1,17 @@
+{{ define "title"}}Mule's Projects: Control Center for {{.Name }}{{end}}
+{{ define "css"}}main{{end}}
+{{define "body"}}
+Hello {{.Name}}<br>
+<br>Apps Available to you:<br>
+&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;<a href="{{.HomeURL}}/roomgame">Room Game Go!</a><br>
+{{ if eq .Level "guest" }}
+&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;<a href="{{.HomeURL}}/menagerie">Menagerie</a><br>
+{{ end }}
+<br><br><a href="/">Main Page</a>
+{{ if eq .Level "guest" }}
+<br><a href="/register">Create an Account</a>
+<br><a href="/login">Login To Existing Account</a>
+{{else}}
+<br><a href="/logout">Logout</a>
+{{ end }}
+{{ end}}
